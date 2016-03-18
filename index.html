@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="Enciende">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Angular</title>
+  <script src="angular.js"></script>
+   <script src="control.js"></script> 
+<style type="text/css">
+    body{background: #ccc;font-family: sans-serif;}
+    div#wrapper{
+      margin: 0 auto;
+      width: 450px;
+      height: 1000px;
+      margin-top: 80px;
+      box-shadow: 10px 10px 10px #555; 
+      background: #fff;}
+      h5, h4{margin-left: 4%;margin-top: 1px;color: #666;text-shadow:0px 2px 0px #fff;}
+      input{margin-left: 25px;}
+      textarea{margin-left: 25px;}  
+      button{margin-left: 205px}
+      .unlysted{list-style-type: none;}
+      i{margin-left: 309px}    
+    </style>
+</head>
+<body>
+<div id="control" ng-controller="Control1">
+  <div id="wrapper"><br>   
+    <div>
+        <h4>E-mail:</h4> 
+          <input type="text" ng-model="nombre.email" placeholder="Ingresa e-mail!">
+    </div><!--h4&input--><br>
+        <div>
+        <h4>Comentarios:</h4> 
+        <textarea ng-model="nombre.comentario" cols="50" rows="10" placeholder="Ingresa tu comentario!"></textarea>
+        </div><!--h4&textarea--><br>
+
+      <h5>¿Desea Notificacion?</h5>
+          <label>
+            <input type="radio" ng-model="nombre.notificacion" value="Si">
+            Si
+        </label>
+        <label>
+            <input type="radio" ng-model="nombre.notificacion" value="No">
+            No
+          </label>
+     <button ng-click="darClick()" type="submit">Publicar</button><br>
+     <br><i>Comentarios:</i>
+      <ul class="unlysted">
+      <li ng-repeat="n2 in nombre2">
+      <p style="font-weight: 700;">{{n2.mail}}</p>
+        <p style="font-weight: 400;">{{n2.comen}}</p>
+      </li>
+      </ul>      
+  </div><!--wrapper-->
+ </div><!--div-controller-->
+</body>
+</html>
